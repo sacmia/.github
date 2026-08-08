@@ -21,4 +21,6 @@ changes materially, update active repositories through reviewed pull requests.
 
 ## Administrator runbooks
 
-- [Create a new Sacmia FastAPI repository](NEW_FASTAPI_REPOSITORY_GUIDE.md)
+- [Create a new Sacmia repository](NEW_REPOSITORY_GUIDE.md)
+- [FastAPI guide](guides/FASTAPI.md)
+- [Flutter guide](guides/FLUTTER.md)
