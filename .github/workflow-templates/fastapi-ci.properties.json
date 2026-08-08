@@ -1,0 +1,6 @@
+{
+  "name": "Sacmia FastAPI CI",
+  "description": "Ruff, Alembic up/down verification, and pytest against PostgreSQL.",
+  "iconName": "octicon shield-check",
+  "categories": ["Python"]
+}

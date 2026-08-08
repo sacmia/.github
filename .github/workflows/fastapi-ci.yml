@@ -1,0 +1,60 @@
+name: Reusable FastAPI CI
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        description: Python version
+        type: string
+        default: "3.12"
+      requirements-file:
+        description: Pip requirements file
+        type: string
+        default: requirements.txt
+      postgres-version:
+        description: PostgreSQL service image version
+        type: string
+        default: "16"
+      run-migrations:
+        description: Run Alembic upgrade/downgrade verification
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:${{ inputs.postgres-version }}
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: app_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/app_test
+      JWT_SECRET: ci-only-not-a-real-secret
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+          cache: pip
+      - run: pip install -r "${{ inputs.requirements-file }}"
+      - run: ruff check .
+      - name: Verify migrations
+        if: inputs.run-migrations
+        run: |
+          alembic upgrade head
+          alembic downgrade base
+          alembic upgrade head
+      - run: pytest
