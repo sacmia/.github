@@ -19,3 +19,6 @@ Shared engineering rules live in `SACMIA_ENGINEERING_STANDARDS.md`. Stack templa
 copy these rules so coding agents can read them locally. When the common standard
 changes materially, update active repositories through reviewed pull requests.
 
+## Administrator runbooks
+
+- [Create a new Sacmia FastAPI repository](NEW_FASTAPI_REPOSITORY_GUIDE.md)
