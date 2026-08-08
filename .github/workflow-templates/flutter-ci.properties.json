@@ -1,0 +1,6 @@
+{
+  "name": "Sacmia Flutter CI",
+  "description": "Flutter dependency resolution, formatting, analysis, and tests.",
+  "iconName": "octicon device-mobile",
+  "categories": ["Mobile", "Dart"]
+}

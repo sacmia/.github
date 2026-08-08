@@ -3,5 +3,5 @@
 Sacmia builds practical software products with secure, maintainable, and
 cost-conscious engineering practices.
 
-Team administrators: follow the [FastAPI repository creation runbook](../NEW_FASTAPI_REPOSITORY_GUIDE.md)
-when starting a new service.
+Team administrators: follow the [repository creation runbook](../NEW_REPOSITORY_GUIDE.md)
+and its technology guide when starting a project.
