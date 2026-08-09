@@ -14,6 +14,10 @@ may add stricter rules but must not silently weaken security, review, or release
 ## Generated code and human responsibility
 
 - Coding agents must read the repository's `CLAUDE.md` and feature specification first.
+- Use one dedicated AI session for each feature branch and pull request. Keep review
+  fixes in that session and start a fresh session for unrelated work. A replacement
+  session must first re-read the current documentation, branch diff, pull request,
+  and review comments.
 - Do not invent unspecified product behavior; record the question and obtain a decision.
 - Every behavior change needs proportionate automated tests and manual acceptance notes.
 - Humans remain responsible for review, security decisions, and functional testing.
@@ -47,4 +51,3 @@ may add stricter rules but must not silently weaken security, review, or release
 - Run formatting, linting, tests, and migration checks before opening a pull request.
 - Keep pull requests focused and document acceptance criteria, tests, assumptions,
   migration impact, security impact, and manual test steps.
-
