@@ -10,10 +10,11 @@ before starting project work.
 3. [Security for developers](guides/SECURITY_FOR_DEVELOPERS.md).
 4. [Contributing and Git workflow](CONTRIBUTING.md).
 5. [AI-assisted development](guides/AI_ASSISTED_DEVELOPMENT.md).
-6. [Code review and testing](guides/CODE_REVIEW_AND_TESTING.md).
-7. The relevant technology guide: [FastAPI](guides/FASTAPI.md) or
+6. [Product design, workflows, and mockups](guides/PRODUCT_DESIGN_AND_MOCKUPS.md).
+7. [Code review and testing](guides/CODE_REVIEW_AND_TESTING.md).
+8. The relevant technology guide: [FastAPI](guides/FASTAPI.md) or
    [Flutter](guides/FLUTTER.md).
-8. The assigned project's `README.md`, `CLAUDE.md`, developer workflow, and
+9. The assigned project's `README.md`, `CLAUDE.md`, developer workflow, and
    feature specification.
 
 After completing the reading, follow the
@@ -59,6 +60,7 @@ A team lead should confirm that the developer can:
 - explain the `feature branch -> development -> main` workflow;
 - run the project and tests locally;
 - use AI without sharing secrets or accepting changes blindly;
+- explain when an approved user flow and mockup package is required before coding;
 - open and review a focused pull request;
 - distinguish local, development, and production environments; and
 - report a security concern or exposed credential immediately.
