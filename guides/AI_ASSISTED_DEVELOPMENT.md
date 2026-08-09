@@ -5,23 +5,62 @@ Codex are examples, not requirements. These rules apply equally to every AI tool
 The developer remains responsible for requirements, code, tests, security, and the
 pull request. An AI-generated change is not automatically correct.
 
-## Before asking the assistant to code
+## Start here: steps for developers
 
-1. Start from the latest `development` branch and create the assigned feature branch.
-2. Confirm that the work has acceptance criteria or an approved feature document.
-3. Read the repository's `CLAUDE.md`, developer workflow, and relevant feature docs.
-4. Check `git status` so unrelated local changes are not included.
+### When joining an existing project
 
-Use a planning request first:
+1. Complete the [engineering onboarding guide](../ENGINEERING_ONBOARDING.md) and obtain
+   only the development access required for the role.
+2. Clone the repository and follow its local setup guide.
+3. Read its `README.md`, `CLAUDE.md`, contributing guide, developer workflow,
+   architecture documents, and relevant feature documents.
+4. Configure the local development environment, using approved test credentials when
+   needed. Never copy secrets into documentation or an AI prompt.
+5. Run the application and its automated checks locally before changing code. Report
+   missing or failing setup instructions.
+6. Obtain an assigned feature or fix with acceptance criteria from the team lead or
+   product owner. Do not ask an AI assistant to invent the requirements.
 
-```text
-Read CLAUDE.md, the developer workflow, the relevant feature specification, and
-their linked documents fully. Do not write code yet. Inspect existing patterns,
-propose a focused implementation and test plan, and list conflicts or unanswered
-product questions. Do not invent unspecified behaviour.
-```
+Developers do not create a new repository unless that responsibility is assigned.
+The repository owner or administrator must first follow the
+[new repository guide](../NEW_REPOSITORY_GUIDE.md).
 
-Resolve important questions with the product owner or team lead before implementation.
+### When starting every feature or fix
+
+1. Confirm the assigned scope, acceptance criteria, repository, and expected branch
+   name. Ask the team lead if any of these are missing.
+2. Check `git status`. Preserve unrelated work and ask for help if the worktree is not
+   clean or its changes are not understood.
+3. Update the local `development` branch and create the assigned short-lived branch:
+
+   ```text
+   git switch development
+   git pull --ff-only origin development
+   git switch -c feat/<short-feature-name>
+   ```
+
+   Use `fix/`, `docs/`, or another repository-approved prefix when appropriate.
+4. Start a fresh session in an approved AI coding assistant for this branch and pull
+   request.
+5. Paste the [feature-start prompt](#copyable-prompt-to-start-a-feature), replace all
+   placeholders, and let the assistant inspect and plan without writing code.
+6. Review the proposed scope and plan yourself. Resolve conflicts and product questions
+   with the team lead or product owner. Record approved decisions in the appropriate
+   project document.
+7. After the plan is approved, use the
+   [implementation prompt](#ask-for-a-complete-reviewable-change). Keep the assistant
+   within the assigned scope.
+8. Review every changed file and run the repository's formatting, linting, automated
+   tests, migration checks, and manual test steps locally.
+9. Complete the [pull-request checklist](#before-opening-a-pull-request), push only the
+   feature branch, and open one pull request into `development`.
+10. A human reviewer checks the change. A reviewer or assigned tester performs manual
+    testing proportionate to its risk. Address review fixes in the same AI session and
+    rerun the relevant checks.
+11. Merge only after human approval and passing CI. The AI assistant must not approve
+    or merge its own work.
+12. Test the merged feature on the development server. Promotion from `development` to
+    `main` is a separate, intentional production release.
 
 ## Required workflow: one feature, one AI session
 
