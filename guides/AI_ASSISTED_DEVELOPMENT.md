@@ -49,6 +49,32 @@ request and review comments, and restate the remaining scope.
 This keeps requirements and changes traceable, reduces confusion from outdated
 decisions, and makes it easier for another developer to continue the work safely.
 
+### Example
+
+A developer is assigned **Admin: create a test shell**.
+
+1. The developer updates `development` and creates `feat/admin-create-test-shell`.
+2. They start a new Claude or Codex session for this feature and give it the
+   repository path.
+3. They ask it to read `CLAUDE.md`, the developer workflow, architecture documents,
+   and the feature specification before proposing a plan.
+4. After the plan is approved, they use that session to implement and test only the
+   test-shell feature and open one pull request into `development`.
+5. A reviewer requests another authorization test. They return to the same session
+   because the request belongs to the same pull request.
+6. Their next assignment is **Candidate registration**. They create a different branch
+   and start a new AI session; they do not continue in the test-shell session.
+
+If the original session becomes unavailable during step 5, they may start a replacement
+session on the same branch with this request:
+
+```text
+Continue the open pull request for this branch. Before changing anything, read the
+repository instructions and relevant feature documents, inspect git status and the
+complete branch diff, and read the pull request and all review comments. Summarize
+the implemented scope and remaining review work, then wait for my approval.
+```
+
 ## Ask for a complete, reviewable change
 
 After the plan is approved, use a request such as:
