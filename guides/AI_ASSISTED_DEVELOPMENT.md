@@ -1,6 +1,7 @@
 # AI-assisted development
 
-Sacmia developers may use Claude, Codex, or another approved coding assistant.
+Sacmia developers may use any AI coding assistant approved by Sacmia. Claude and
+Codex are examples, not requirements. These rules apply equally to every AI tool.
 The developer remains responsible for requirements, code, tests, security, and the
 pull request. An AI-generated change is not automatically correct.
 
@@ -24,7 +25,7 @@ Resolve important questions with the product owner or team lead before implement
 
 ## Required workflow: one feature, one AI session
 
-Use this rule for Claude, Codex, and every other approved coding assistant:
+Use this rule for every approved AI coding assistant, regardless of product or vendor:
 
 ```text
 One feature or fix -> one branch -> one dedicated AI session -> one pull request
@@ -52,7 +53,8 @@ decisions, and makes it easier for another developer to continue the work safely
 ### Copyable prompt to start a feature
 
 Replace the text inside `<angle brackets>`, then paste this as the first message in a
-new Claude or Codex session:
+new session, task, thread, or chat in the approved AI coding assistant being used.
+This guide uses **AI session** as the common name for all of those terms.
 
 ```text
 You are helping me work on <FEATURE OR FIX NAME> in the <REPOSITORY NAME> repository.
@@ -97,7 +99,7 @@ ready and a feature with acceptance criteria has been assigned.
 A developer is assigned **Admin: create a test shell**.
 
 1. The developer updates `development` and creates `feat/admin-create-test-shell`.
-2. They start a new Claude or Codex session for this feature and give it the
+2. They start a new session in their approved AI coding assistant and give it the
    repository path.
 3. They ask it to read `CLAUDE.md`, the developer workflow, architecture documents,
    and the feature specification before proposing a plan.
@@ -160,5 +162,5 @@ approve or merge its own work. A human reviewer and passing CI are required.
 - a destructive migration or production change is proposed; or
 - the assistant says work is complete without showing verification evidence.
 
-For more examples of using Codex to understand, build, test, and review software, see
-the [official OpenAI developer guidance](https://developers.openai.com/).
+Also follow the official documentation for the approved AI tool being used, but never
+use tool-specific guidance to weaken Sacmia or project rules.
