@@ -16,6 +16,9 @@ before starting project work.
 8. The assigned project's `README.md`, `CLAUDE.md`, developer workflow, and
    feature specification.
 
+After completing the reading, follow the
+[steps for joining a project and starting a feature](guides/AI_ASSISTED_DEVELOPMENT.md#start-here-steps-for-developers).
+
 ## First-week checklist
 
 ### Access and security
