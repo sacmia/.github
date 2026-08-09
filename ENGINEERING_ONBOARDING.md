@@ -41,10 +41,12 @@ and a responsible owner approves it.
 
 - [ ] Start from the latest `development` branch.
 - [ ] Create a small `docs/`, `test/`, `feat/`, or `fix/` branch as assigned.
+- [ ] Start a fresh, dedicated AI session for that branch and pull request.
 - [ ] Make a focused change with AI assistance if useful.
 - [ ] Review the complete diff and run the documented checks.
 - [ ] Open a pull request into `development` and complete its template.
-- [ ] Address review comments without resolving another person's comment silently.
+- [ ] Address review comments in the same AI session without resolving another
+      person's comment silently.
 - [ ] Review and manually test another safe development change with guidance.
 
 ## Ready for project work
