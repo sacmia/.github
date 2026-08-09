@@ -1,5 +1,8 @@
 # Contributing at Sacmia
 
+New developers must complete the [engineering onboarding](ENGINEERING_ONBOARDING.md)
+with a team lead before starting project work.
+
 1. Read the repository's `README.md`, `CLAUDE.md`, and relevant feature specification.
 2. Branch from `development` using `feat/`, `fix/`, or `docs/` naming.
 3. Keep one feature or fix per pull request.
@@ -9,4 +12,3 @@
 7. Obtain one human approval and passing CI before merge.
 
 `development` to `main` is a production release performed by the team.
-
