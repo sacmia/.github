@@ -21,6 +21,13 @@ changes materially, update active repositories through reviewed pull requests.
 
 ## Administrator runbooks
 
+- [Engineering onboarding](ENGINEERING_ONBOARDING.md)
 - [Create a new Sacmia repository](NEW_REPOSITORY_GUIDE.md)
 - [FastAPI guide](guides/FASTAPI.md)
 - [Flutter guide](guides/FLUTTER.md)
+
+## Developer guides
+
+- [AI-assisted development](guides/AI_ASSISTED_DEVELOPMENT.md)
+- [Code review and testing](guides/CODE_REVIEW_AND_TESTING.md)
+- [Security for developers](guides/SECURITY_FOR_DEVELOPERS.md)
