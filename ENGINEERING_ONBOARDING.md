@@ -16,9 +16,6 @@ before starting project work.
 8. The assigned project's `README.md`, `CLAUDE.md`, developer workflow, and
    feature specification.
 
-The [new repository guide](NEW_REPOSITORY_GUIDE.md) is for people who create or
-administer repositories; it is not required for normal feature development.
-
 ## First-week checklist
 
 ### Access and security
