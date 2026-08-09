@@ -14,6 +14,7 @@ process from one place.
 | Join a project or start a feature | [Developer start steps](guides/AI_ASSISTED_DEVELOPMENT.md#start-here-steps-for-developers) |
 | Start an AI-assisted feature session | [Copyable feature-start prompt](guides/AI_ASSISTED_DEVELOPMENT.md#copyable-prompt-to-start-a-feature) |
 | Develop with any approved AI tool | [AI-assisted development](guides/AI_ASSISTED_DEVELOPMENT.md) |
+| Create user flows, UX/UI specifications, or mockups | [Product design and mockups](guides/PRODUCT_DESIGN_AND_MOCKUPS.md) |
 | Review a pull request or test a change | [Code review and testing](guides/CODE_REVIEW_AND_TESTING.md) |
 | Work securely or handle credentials | [Security for developers](guides/SECURITY_FOR_DEVELOPERS.md) |
 | Work on a FastAPI repository | [FastAPI guide](guides/FASTAPI.md) |
