@@ -1,8 +1,9 @@
-# Sacmia engineering handbook
+# Sacmia organization engineering standards
 
-This is the home page for Sacmia's organization-wide engineering standards and
-developer guides. Send this page to new developers so they can find the current
-process from one place.
+This public repository is the source for Sacmia's organization-wide GitHub defaults,
+engineering standards, and repository-owner guidance. Authorized staff use the private
+[Sacmia Engineering Handbook](https://handbook.sacmia.com/) for the complete onboarding
+and technology guides.
 
 > [New developer? Start with the engineering onboarding guide.](ENGINEERING_ONBOARDING.md)
 
@@ -54,9 +55,10 @@ security, review, branch, or release rules.
 
 Repository creation and administration are not normal feature-development duties.
 Assigned owners or administrators should follow the
-[new repository guide](NEW_REPOSITORY_GUIDE.md). New FastAPI repositories should be
-created from `sacmia/template-fastapi`; other approved stack templates should be used
-when available.
+[new repository guide](NEW_REPOSITORY_GUIDE.md). This `.github` repository—not the
+private developer handbook—is the canonical location for repository-owner procedures.
+New FastAPI repositories should be created from `sacmia/template-fastapi`; other
+approved stack templates should be used when available.
 
 ## How organization defaults work
 
