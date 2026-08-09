@@ -49,6 +49,49 @@ request and review comments, and restate the remaining scope.
 This keeps requirements and changes traceable, reduces confusion from outdated
 decisions, and makes it easier for another developer to continue the work safely.
 
+### Copyable prompt to start a feature
+
+Replace the text inside `<angle brackets>`, then paste this as the first message in a
+new Claude or Codex session:
+
+```text
+You are helping me work on <FEATURE OR FIX NAME> in the <REPOSITORY NAME> repository.
+Repository path: <LOCAL REPOSITORY PATH>
+Required branch: <feat/... OR fix/...>
+Pull-request target: development
+
+Before changing any file:
+1. Confirm the repository path, current branch, and git status. Stop if the branch is
+   wrong or if unrelated changes could be overwritten.
+2. Read the current Sacmia engineering standards and AI-assisted development guide:
+   - https://github.com/sacmia/.github/blob/main/SACMIA_ENGINEERING_STANDARDS.md
+   - https://github.com/sacmia/.github/blob/main/guides/AI_ASSISTED_DEVELOPMENT.md
+   If you cannot access them, tell me before continuing.
+3. Read this repository's README.md, CLAUDE.md, CONTRIBUTING.md, developer workflow,
+   architecture documents, feature specification, acceptance criteria, and every
+   relevant document linked from them. If a named file does not exist, say so.
+4. Treat the current organization standards and repository documentation as the source
+   of truth. Project rules may be stricter, but must not weaken Sacmia security, review,
+   branch, or release rules.
+5. Inspect the existing code and tests for established patterns.
+
+Do not implement anything yet. Give me:
+- your understanding of the requested scope and acceptance criteria;
+- conflicts, missing decisions, assumptions, or security concerns;
+- a focused implementation and test plan;
+- the files and migrations likely to change; and
+- the validation and manual testing you will perform.
+
+Do not invent requirements, expose credentials, include unrelated changes, merge a
+pull request, or push directly to development or main. Wait for my approval after
+showing the plan.
+```
+
+For a brand-new repository, its owner or administrator must first follow the
+[new repository guide](../NEW_REPOSITORY_GUIDE.md) and create the baseline project
+documentation. Developers should use the prompt above only after the repository is
+ready and a feature with acceptance criteria has been assigned.
+
 ### Example
 
 A developer is assigned **Admin: create a test shell**.
