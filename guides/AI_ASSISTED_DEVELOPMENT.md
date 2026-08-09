@@ -22,6 +22,33 @@ product questions. Do not invent unspecified behaviour.
 
 Resolve important questions with the product owner or team lead before implementation.
 
+## Required workflow: one feature, one AI session
+
+Use this rule for Claude, Codex, and every other approved coding assistant:
+
+```text
+One feature or fix -> one branch -> one dedicated AI session -> one pull request
+```
+
+- Start a fresh AI session after creating or switching to the assigned branch.
+- Ask the assistant to read the current repository documentation before planning or
+  changing files. Repository documentation and the current branch are the source of
+  truth, not memories from an earlier session.
+- Keep planning, implementation, tests, documentation, and pull-request creation for
+  that feature in its dedicated session.
+- Continue review feedback and fixes in the same session while that pull request is
+  open.
+- Start a new session for a different feature, branch, or pull request. Do not combine
+  unrelated work to save time.
+
+If a session is lost, becomes unreliable, or grows too large, a replacement session
+may continue the same branch and pull request. Before acting, it must re-read the
+repository instructions, inspect the branch status and complete diff, read the pull
+request and review comments, and restate the remaining scope.
+
+This keeps requirements and changes traceable, reduces confusion from outdated
+decisions, and makes it easier for another developer to continue the work safely.
+
 ## Ask for a complete, reviewable change
 
 After the plan is approved, use a request such as:
@@ -33,9 +60,8 @@ the documented checks and report their results, manual test steps, assumptions, 
 remaining risks. Do not merge the pull request.
 ```
 
-Keep one feature or fix in each session and pull request. Review tool requests before
-approving them, especially changes involving dependencies, databases, cloud resources,
-domains, deployments, or destructive commands.
+Review tool requests before approving them, especially changes involving dependencies,
+databases, cloud resources, domains, deployments, or destructive commands.
 
 ## Information that must not be shared
 
