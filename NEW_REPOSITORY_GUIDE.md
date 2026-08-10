@@ -7,11 +7,18 @@ first, then follow the relevant technology guide.
 
 1. Confirm the approved project name, repository name, owner, visibility, and technical
    stack with the project owner.
-2. Open the matching `sacmia/template-*` repository and select **Use this template** →
-   **Create a new repository**. Do not start from a blank repository.
+2. Check whether Sacmia has an approved `sacmia/template-*` repository for the chosen
+   stack. When one exists, select **Use this template** → **Create a new repository**.
+   When none exists, stop repository creation until the repository owner approves a
+   baseline covering runtime versions, structure, dependencies, tests, linting, CI,
+   local setup, and AI instructions. Developers must not invent an unofficial baseline.
+   After that baseline succeeds in a real project, the owner should consider promoting
+   it to a reusable organization template.
 3. Set **Owner** to `sacmia` and select **Private** unless public visibility is
    explicitly approved.
-4. Select **Include all branches** so `main` and `development` are copied.
+4. When using a template, select **Include all branches** so `main` and `development`
+   are copied. For an approved non-template baseline, the repository administrator must
+   create both branches before feature work.
 5. Clone the repository, switch to `development`, and create `docs/project-setup`.
 6. Replace all template placeholders in `README.md`, `AGENTS.md`, `CLAUDE.md`,
    environment examples, the project developer workflow, and project-decision
@@ -51,7 +58,7 @@ first, then follow the relevant technology guide.
 
 ## Common verification checklist
 
-- [ ] Correct Sacmia template was used
+- [ ] Correct Sacmia template was used, or the repository owner approved the baseline
 - [ ] Repository name, description, visibility, and access are correct
 - [ ] Both `main` and `development` exist; `main` remains the production branch
 - [ ] Template placeholders are replaced
