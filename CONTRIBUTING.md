@@ -3,7 +3,8 @@
 New developers must complete the [engineering onboarding](ENGINEERING_ONBOARDING.md)
 with a team lead before starting project work.
 
-1. Read the repository's `README.md`, `CLAUDE.md`, and relevant feature specification.
+1. Read the repository's `README.md`, `AGENTS.md`, all detailed AI instruction files,
+   developer workflow, and relevant feature specification.
 2. Branch from `development` using `feat/`, `fix/`, or `docs/` naming.
 3. Keep one feature or fix per pull request.
 4. Add or update automated tests.

@@ -9,12 +9,15 @@ Follow the [common repository guide](../NEW_REPOSITORY_GUIDE.md), using
 gh repo clone sacmia/REPOSITORY_NAME
 cd REPOSITORY_NAME
 git switch development
-git pull origin development
+git pull --ff-only origin development
 git switch -c docs/project-setup
 ```
 
-Replace project placeholders in `README.md`, `CLAUDE.md`,
-`docs/PROJECT_DECISIONS.md`, and `.env.example`.
+Replace project placeholders in `README.md`, `AGENTS.md`, `CLAUDE.md`,
+`docs/developer-workflow.md`, `docs/PROJECT_DECISIONS.md`, and `.env.example`.
+
+The project developer workflow must cover macOS/Linux and Windows commands when the
+team uses those systems, plus the project-specific AI start prompt and review checklist.
 
 Run:
 
@@ -31,7 +34,7 @@ and set `run-migrations: true` in `.github/workflows/ci.yml`.
 
 ```bash
 git add .
-git commit -m "Configure project documentation and Claude instructions"
+git commit -m "Configure project documentation and AI instructions"
 git push -u origin docs/project-setup
 gh pr create --base development
 ```
@@ -40,7 +43,9 @@ gh pr create --base development
 
 - [ ] `/health` works locally
 - [ ] Ruff and pytest pass
+- [ ] `AGENTS.md` and the project developer workflow route all approved AI tools to
+      the same plan-before-code and human-review process
+- [ ] Local setup is documented for every operating system used by the team
 - [ ] CI uses the shared Sacmia FastAPI workflow
 - [ ] Database migrations are enabled in CI when the project adds persistence
 - [ ] Docker image builds when deployment is introduced
-
