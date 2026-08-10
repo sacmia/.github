@@ -65,8 +65,9 @@ approved stack templates should be used when available.
 Repositories without local overrides can inherit this repository's pull-request
 template, issue templates, `CONTRIBUTING.md`, and `SECURITY.md` through GitHub.
 
-`CLAUDE.md`, application scaffolding, CI caller files, deployment configuration,
-branch protection, architecture, and product requirements remain repository-specific.
+`AGENTS.md`, `CLAUDE.md`, the project developer workflow, application scaffolding, CI
+caller files, deployment configuration, branch protection, architecture, and product
+requirements remain repository-specific.
 Shared engineering rules should also be available inside active repositories so any
 approved AI coding assistant can read them locally.
 
