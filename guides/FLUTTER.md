@@ -12,13 +12,15 @@ flutter doctor
 gh repo clone sacmia/REPOSITORY_NAME
 cd REPOSITORY_NAME
 git switch development
-git pull origin development
+git pull --ff-only origin development
 git switch -c docs/project-setup
 ```
 
-Replace project placeholders in `README.md`, `CLAUDE.md`,
-`docs/PROJECT_DECISIONS.md`, `pubspec.yaml`, and platform identifiers before publishing
-to an app store.
+Replace project placeholders in `README.md`, `AGENTS.md`, `CLAUDE.md`,
+`docs/developer-workflow.md`, `docs/PROJECT_DECISIONS.md`, `pubspec.yaml`, and platform
+identifiers before publishing to an app store. The developer workflow must cover every
+host operating system used by the team and include the project-specific AI start prompt
+and review checklist.
 
 Run the official Flutter checks:
 
@@ -46,7 +48,7 @@ project's actual ports and environment selection in its own Flutter developer gu
 
 ```bash
 git add .
-git commit -m "Configure project documentation and Claude instructions"
+git commit -m "Configure project documentation and AI instructions"
 git push -u origin docs/project-setup
 gh pr create --base development
 ```
@@ -56,6 +58,9 @@ gh pr create --base development
 - [ ] Flutter stable SDK is used and `flutter doctor` has no relevant errors
 - [ ] Application ID / bundle ID is unique and approved before release
 - [ ] Formatting, analysis, unit tests, and widget tests pass
+- [ ] `AGENTS.md` and the project developer workflow route all approved AI tools to
+      the same plan-before-code and human-review process
+- [ ] Local setup is documented for every host operating system used by the team
 - [ ] CI uses the shared Sacmia Flutter workflow
 - [ ] API URLs and signing credentials are environment-specific and not hardcoded
 - [ ] Android/iOS signing material is stored outside Git

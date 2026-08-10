@@ -25,6 +25,23 @@ Developers do not create a new repository unless that responsibility is assigned
 The repository owner or administrator must first follow the
 [new repository guide](../NEW_REPOSITORY_GUIDE.md).
 
+### Required project-local guidance
+
+Every active project must keep a concise, practical AI-assisted workflow in its own
+developer guide. A developer should not need to remember how the organization policy
+maps to that repository. The project guide must include:
+
+- the one feature/fix → one branch → one AI session → one pull request rule;
+- the repository's required reading order and plan-before-code approval gate;
+- a copyable project-specific feature-start prompt and implementation prompt;
+- project checks, migration/build verification, and manual-test steps;
+- the human-review, `development`, and production-release boundaries; and
+- a link back to this canonical guide.
+
+Keep a root `AGENTS.md` as a short tool-neutral entry point that routes every approved
+coding agent to the same detailed project instructions. Project guidance may be
+stricter than this guide, but must not duplicate it wholesale or weaken it.
+
 ### When starting every feature or fix
 
 1. Confirm the assigned scope, acceptance criteria, repository, and expected branch

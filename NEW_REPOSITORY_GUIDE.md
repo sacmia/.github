@@ -13,20 +13,30 @@ first, then follow the relevant technology guide.
    explicitly approved.
 4. Select **Include all branches** so `main` and `development` are copied.
 5. Clone the repository, switch to `development`, and create `docs/project-setup`.
-6. Replace all template placeholders in `README.md`, `CLAUDE.md`, environment examples,
-   and project-decision documentation.
+6. Replace all template placeholders in `README.md`, `AGENTS.md`, `CLAUDE.md`,
+   environment examples, the project developer workflow, and project-decision
+   documentation.
 7. Add complete local-development instructions: prerequisites and versions, environment
    setup, dependency services, migrations, sample data, run/stop commands, ports, tests,
-   linting, builds, and common errors.
-8. Record the approved application technology and database. The local environment must
+   linting, builds, and common errors. Cover every operating system the development
+   team uses.
+8. Keep a concise, tool-neutral AI-assisted workflow in the project developer guide:
+   one feature/fix per branch, dedicated AI session and pull request; plan approval
+   before code; a project-specific copyable start prompt; verification checklist; and
+   human review. Link to the canonical organization guide instead of copying it in full.
+9. Keep a root `AGENTS.md` as the tool-neutral entry point. It must route coding agents
+   to the project's detailed instructions, developer workflow, decisions, and feature
+   specifications. A tool-specific file such as `CLAUDE.md` may contain the detailed
+   rules, but those rules must apply consistently to every approved coding agent.
+10. Record the approved application technology and database. The local environment must
    use the same database engine and a compatible major version.
-9. Decide whether Docker is required. Prefer Docker Compose for databases and related
+11. Decide whether Docker is required. Prefer Docker Compose for databases and related
    backend dependencies; document a native workflow when Docker is not appropriate.
-10. Never commit credentials or customer data. Add runtime values through GitHub
+12. Never commit credentials or customer data. Add runtime values through GitHub
    **Settings → Secrets and variables → Actions** when deployment is configured.
-11. Run the stack's required local checks and open a pull request into `development`.
-12. Another team member reviews and tests. Coding agents do not merge their own PRs.
-13. Use `development → main` only as an intentional production release.
+13. Run the stack's required local checks and open a pull request into `development`.
+14. Another team member reviews and tests. Coding agents do not merge their own PRs.
+15. Use `development → main` only as an intentional production release.
 
 ## Required repository settings
 
@@ -45,11 +55,15 @@ first, then follow the relevant technology guide.
 - [ ] Repository name, description, visibility, and access are correct
 - [ ] Both `main` and `development` exist; `main` remains the production branch
 - [ ] Template placeholders are replaced
+- [ ] `AGENTS.md` routes every approved coding agent to the same project rules
+- [ ] The project developer guide includes its practical AI workflow, start prompt,
+      review checklist, and canonical handbook link
 - [ ] CI passes on `development`
 - [ ] No secrets or customer data were committed
 - [ ] Reviewers have access
 - [ ] Environment and deployment details are documented without secret values
 - [ ] Local setup, run, stop, migration, test, and build commands are complete
+- [ ] Local commands cover every operating system used by the assigned developers
 - [ ] Database engine/version and isolated test-database rules are documented
 - [ ] Docker usage or the approved native alternative is documented
 - [ ] Automatic head-branch deletion cannot remove `development`
