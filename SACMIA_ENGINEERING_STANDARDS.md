@@ -8,7 +8,11 @@ may add stricter rules but must not silently weaken security, review, or release
 - Work on a short-lived branch such as `feat/<name>`, `fix/<name>`, or `docs/<name>`.
 - Open pull requests into `development`; never push directly to `development` or `main`.
 - Require at least one human review and passing CI before merge.
-- Merge `development` into `main` only as an intentional production release.
+- Open the production-release pull request directly from the long-lived
+  `development` branch into `main`. Merge it only as an intentional release after
+  human approval and passing CI; do not create an intermediate release branch.
+- Repository settings must not automatically delete the `development` head branch
+  after that release PR merges.
 - Never let a coding agent merge its own pull request.
 
 ## Generated code and human responsibility

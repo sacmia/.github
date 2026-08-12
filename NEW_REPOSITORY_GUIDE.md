@@ -43,14 +43,16 @@ first, then follow the relevant technology guide.
    **Settings → Secrets and variables → Actions** when deployment is configured.
 13. Run the stack's required local checks and open a pull request into `development`.
 14. Another team member reviews and tests. Coding agents do not merge their own PRs.
-15. Use `development → main` only as an intentional production release.
+15. Use a direct `development → main` pull request only as an intentional production
+    release. Do not create an intermediate release branch.
 
 ## Required repository settings
 
 - Keep `main` as the production and default branch.
 - Keep the long-lived `development` branch available for feature integration.
-- Do not enable automatic deletion of pull-request head branches when release pull
-  requests use `development` as the head; GitHub may delete `development` after merge.
+- Do not enable automatic deletion of pull-request head branches. Release pull
+  requests use the long-lived `development` branch as the head, and it must still
+  exist after merge.
 - Require pull requests, human review, and passing CI where the organization plan
   supports those controls. Otherwise enforce the same workflow through review policy.
 - Grant the minimum repository role each person needs.
@@ -83,5 +85,5 @@ first, then follow the relevant technology guide.
 ## Standard lifecycle
 
 ```text
-feat/*, fix/*, docs/* → pull request → development → release pull request → main
+feat/*, fix/*, docs/* → pull request → development → direct release PR → main
 ```
