@@ -12,4 +12,7 @@ with a team lead before starting project work.
 6. Open the pull request into `development` and complete the template.
 7. Obtain one human approval and passing CI before merge.
 
-`development` to `main` is a production release performed by the team.
+For a production release, the team opens a pull request directly from the long-lived
+`development` branch into `main`. It requires human approval and passing CI. Do not
+create an intermediate release branch, push directly to `main`, or enable automatic
+head-branch deletion that could remove `development` after merge.
