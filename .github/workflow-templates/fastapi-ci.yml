@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [development]
+    branches: [$default-branch]
   push:
-    branches: [development]
+    branches: [$default-branch]
 
 permissions:
   contents: read
@@ -12,4 +12,5 @@ permissions:
 jobs:
   ci:
     uses: sacmia/.github/.github/workflows/fastapi-ci.yml@main
-
+    with:
+      working-directory: backend

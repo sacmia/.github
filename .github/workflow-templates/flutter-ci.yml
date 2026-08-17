@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [development]
+    branches: [$default-branch]
   push:
-    branches: [development]
+    branches: [$default-branch]
 
 permissions:
   contents: read
@@ -14,4 +14,4 @@ jobs:
     uses: sacmia/.github/.github/workflows/flutter-ci.yml@main
     with:
       flutter-channel: stable
-
+      working-directory: frontend

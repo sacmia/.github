@@ -7,6 +7,10 @@ on:
         description: Flutter release channel
         type: string
         default: stable
+      working-directory:
+        description: Repository-relative directory containing the Flutter component
+        type: string
+        default: "."
 
 permissions:
   contents: read
@@ -14,6 +18,9 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Flutter
@@ -23,8 +30,6 @@ jobs:
           cache: true
       - run: flutter pub get
       - name: Check formatting
-        run: |
-          dart format .
-          git diff --exit-code
+        run: dart format --output=none --set-exit-if-changed .
       - run: flutter analyze
       - run: flutter test

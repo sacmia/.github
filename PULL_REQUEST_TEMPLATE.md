@@ -26,10 +26,10 @@
 
 ## Checklist
 
-- [ ] Target branch is `development`
+- [ ] Target branch matches this repository's documented workflow
 - [ ] CI and local checks pass
 - [ ] Tests cover changed behavior
+- [ ] Required human architecture/security approvals are recorded
 - [ ] No secrets or real customer data are included
 - [ ] Documentation is updated where required
 - [ ] Reviewer can reproduce the result
-

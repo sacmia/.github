@@ -1,15 +1,19 @@
-# Contributing at Sacmia
+# Contributing at SACMIA
 
-New developers must complete the [engineering onboarding](ENGINEERING_ONBOARDING.md)
-with a team lead before starting project work.
+The private [`sacmia-engineering`](https://github.com/sacmia/sacmia-engineering)
+repository is the engineering authority for authorized SACMIA collaborators. Each
+repository also defines its own profile, branch workflow, architecture, and executable
+checks.
 
-1. Read the repository's `README.md`, `AGENTS.md`, all detailed AI instruction files,
-   developer workflow, and relevant feature specification.
-2. Branch from `development` using `feat/`, `fix/`, or `docs/` naming.
-3. Keep one feature or fix per pull request.
-4. Add or update automated tests.
-5. Run the repository's documented checks locally.
-6. Open the pull request into `development` and complete the template.
-7. Obtain one human approval and passing CI before merge.
+For any contribution:
 
-`development` to `main` is a production release performed by the team.
+1. Read the target repository's `README.md`, `AGENTS.md`, `sacmia.yml`, architecture
+   documentation, and task-specific requirements where present.
+2. Create a focused branch from the base specified by that repository.
+3. Keep one coherent change per pull request.
+4. Add proportionate tests for behavior changes.
+5. Run the target repository's declared lint, test, and build commands.
+6. Complete the pull-request template and obtain human review before merge.
+
+Never include credentials, real customer data, or confidential product information in
+issues, pull requests, logs, screenshots, or public documentation.

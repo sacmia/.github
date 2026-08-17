@@ -1,15 +1,20 @@
-# AI coding agents — start here
+# Repository instructions
 
-These public organization standards are the canonical source for Sacmia engineering
-policy and repository-owner guidance.
+## Repository facts
 
-Before changing files, read `README.md`, `CONTRIBUTING.md`,
-`SACMIA_ENGINEERING_STANDARDS.md`, and every guide relevant to the task. For AI workflow
-changes, read `guides/AI_ASSISTED_DEVELOPMENT.md`; for repository setup changes, also
-read `NEW_REPOSITORY_GUIDE.md` and the relevant technology guide.
+- Purpose: public GitHub organization defaults and reusable CI mechanisms
+- Authoritative engineering standard: `sacmia/sacmia-engineering`
+- Profile: `standalone` governance; application layering is not applicable
 
-Keep common rules tool-neutral and project-agnostic. Never add credentials, customer
-data, private product architecture, or project-specific confidential information.
-Work on one focused branch from `development`, open a pull request into `development`,
-and require human review. Never push directly to `development` or `main`, and never
-approve or merge your own pull request.
+## Agent rules
+
+- Read `README.md` and `CONTRIBUTING.md` before changing files.
+- Do not duplicate engineering, architecture, security, or AI-development policy from
+  `sacmia-engineering`; link to the authority instead.
+- Keep public content free of credentials, customer data, private product architecture,
+  and product-specific confidential information.
+- Keep defaults profile-neutral. A repository's local instructions define its branch,
+  release, architecture, and validation workflow.
+- Reusable workflows provide mechanisms only. They MUST NOT claim to enforce semantic
+  architecture, security ownership, or human approval decisions.
+- Preserve human review for changes to organization-wide defaults.

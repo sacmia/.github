@@ -1,76 +1,38 @@
-# Sacmia organization engineering standards
+# SACMIA GitHub defaults
 
-This public repository is the source for Sacmia's organization-wide GitHub defaults,
-engineering standards, and repository-owner guidance. Authorized staff use the private
-[Sacmia Engineering Handbook](https://handbook.sacmia.com/) for the complete onboarding
-and technology guides.
+This public repository provides GitHub-specific organization defaults: community
+health files, issue and pull-request templates, reusable workflows, workflow templates,
+and the public organization profile.
 
-> [New developer? Start with the engineering onboarding guide.](ENGINEERING_ONBOARDING.md)
+It is **not** an engineering-policy source. The private
+[`sacmia-engineering`](https://github.com/sacmia/sacmia-engineering) repository is the
+single source of truth for SACMIA engineering governance, architecture profiles,
+standards, ADRs, and repository templates. Authorized collaborators should start there
+and then follow the local instructions in the repository they are changing.
 
-## Find the right guide
+## Contents
 
-| I need to... | Follow this guide |
+| Path | Purpose |
 | --- | --- |
-| Join Sacmia as a developer | [Engineering onboarding](ENGINEERING_ONBOARDING.md) |
-| Join a project or start a feature | [Developer start steps](guides/AI_ASSISTED_DEVELOPMENT.md#start-here-steps-for-developers) |
-| Start an AI-assisted feature session | [Copyable feature-start prompt](guides/AI_ASSISTED_DEVELOPMENT.md#copyable-prompt-to-start-a-feature) |
-| Develop with any approved AI tool | [AI-assisted development](guides/AI_ASSISTED_DEVELOPMENT.md) |
-| Create user flows, UX/UI specifications, or mockups | [Product design and mockups](guides/PRODUCT_DESIGN_AND_MOCKUPS.md) |
-| Review a pull request or test a change | [Code review and testing](guides/CODE_REVIEW_AND_TESTING.md) |
-| Work securely or handle credentials | [Security for developers](guides/SECURITY_FOR_DEVELOPERS.md) |
-| Work on a FastAPI repository | [FastAPI guide](guides/FASTAPI.md) |
-| Work on a Flutter repository | [Flutter guide](guides/FLUTTER.md) |
-| Create or administer a repository | [New repository guide](NEW_REPOSITORY_GUIDE.md) |
-| Report a security vulnerability | [Security policy](SECURITY.md) |
-
-## Daily development workflow
-
-Every feature or fix follows this path:
-
-```text
-assigned work -> feature branch -> dedicated AI session -> local tests
--> pull request to development -> human review and testing -> development server
--> intentional production release to main
-```
-
-Start with the detailed
-[project and feature steps](guides/AI_ASSISTED_DEVELOPMENT.md#start-here-steps-for-developers).
-The essential rule is:
-
-```text
-One feature or fix -> one branch -> one dedicated AI session -> one pull request
-```
-
-## Core standards
-
-- [Sacmia engineering standards](SACMIA_ENGINEERING_STANDARDS.md)
-- [Contributing and Git workflow](CONTRIBUTING.md)
-- [Pull-request template](PULL_REQUEST_TEMPLATE.md)
-- [Security policy](SECURITY.md)
-
-Project documentation may add stricter requirements but must not weaken these common
-security, review, branch, or release rules.
-
-## Repository owners and administrators
-
-Repository creation and administration are not normal feature-development duties.
-Assigned owners or administrators should follow the
-[new repository guide](NEW_REPOSITORY_GUIDE.md). This `.github` repository—not the
-private developer handbook—is the canonical location for repository-owner procedures.
-New FastAPI repositories should be created from `sacmia/template-fastapi`; other
-approved stack templates should be used when available.
+| [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/) | Organization-default issue forms |
+| [`.github/workflow-templates/`](.github/workflow-templates/) | Starter callers for approved reusable CI |
+| [`.github/workflows/`](.github/workflows/) | Reusable FastAPI and Flutter CI mechanisms |
+| [`PULL_REQUEST_TEMPLATE.md`](PULL_REQUEST_TEMPLATE.md) | Profile-neutral pull-request checklist |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Concise public contribution defaults |
+| [`SECURITY.md`](SECURITY.md) | Private vulnerability-reporting instructions |
+| [`profile/README.md`](profile/README.md) | Public organization profile |
+| [`sacmia.yml`](sacmia.yml) | Engineering v1.1.0 adoption metadata and checks |
 
 ## How organization defaults work
 
 Repositories without local overrides can inherit this repository's pull-request
 template, issue templates, `CONTRIBUTING.md`, and `SECURITY.md` through GitHub.
 
-`AGENTS.md`, `CLAUDE.md`, the project developer workflow, application scaffolding, CI
-caller files, deployment configuration, branch protection, architecture, and product
-requirements remain repository-specific.
-Shared engineering rules should also be available inside active repositories so any
-approved AI coding assistant can read them locally.
+`AGENTS.md`, `CLAUDE.md`, `sacmia.yml`, application scaffolding, CI caller files,
+deployment configuration, branch policy, architecture, and product requirements remain
+repository-specific. A local file overrides an organization default where GitHub
+supports inheritance.
 
-When a common standard changes materially, update active repositories through reviewed
-pull requests. Do not copy passwords, tokens, customer data, private architecture, or
-project-specific confidential information into this public repository.
+This repository MUST link to the engineering standard instead of duplicating it. Do not
+copy passwords, tokens, customer data, private architecture, or product-specific
+confidential information into this public repository.
