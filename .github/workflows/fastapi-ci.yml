@@ -7,6 +7,10 @@ on:
         description: Python version
         type: string
         default: "3.12"
+      working-directory:
+        description: Repository-relative directory containing the Python component
+        type: string
+        default: "."
       requirements-file:
         description: Pip requirements file
         type: string
@@ -26,6 +30,9 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
     services:
       postgres:
         image: postgres:${{ inputs.postgres-version }}
@@ -42,13 +49,14 @@ jobs:
           --health-retries 5
     env:
       DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/app_test
-      JWT_SECRET: ci-only-not-a-real-secret
+      JWT_SECRET: ci-only-not-secret-0000000000000000000000000000
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ inputs.python-version }}
           cache: pip
+          cache-dependency-path: ${{ inputs.working-directory }}/${{ inputs.requirements-file }}
       - run: pip install -r "${{ inputs.requirements-file }}"
       - run: ruff check .
       - name: Verify migrations
